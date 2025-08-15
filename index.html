@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ajuni Dang</title>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+  <style>
+    :root {
+      --bg: #111111;
+      --text: #ffffff;
+      --accent: #2b6cb0;
+      --muted: #bbb;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      line-height: 1.6;
+    }
+    h1, h2 {
+      font-family: 'EB Garamond', serif;
+      font-weight: 400;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+    h1 { font-size: 3rem; }
+    h2 { font-size: 2.25rem; }
+    p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto 2rem;
+      color: var(--muted);
+      text-align: center;
+    }
+    .section {
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .hero-banner {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      padding: 6rem 2rem 4rem;
+      background-color: var(--bg);
+      text-align: left;
+    }
+    .img-banner {
+      flex: 0 0 auto;
+      width: 100%;
+      max-width: 441.5px;
+      height: auto;
+      opacity: 1 !important;
+      visibility: visible !important;
+    }
+    .hero-text {
+      flex: 1 1 300px;
+      max-width: 600px;
+    }
+    .hero-text h1 { font-size: 2.75rem; margin-bottom: 1rem; }
+    .hero-text p { text-align: left; margin: 0 0 2rem; }
+    .cta-buttons { margin-top: 1rem; }
+    .cta-buttons a {
+      display: inline-block;
+      margin: 0.5rem 1rem 0.5rem 0;
+      padding: 0.75rem 1.5rem;
+      border: 2px solid var(--accent);
+      color: var(--accent);
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+    .cta-buttons a:hover {
+      background-color: var(--accent);
+      color: white;
+    }
+    .Homepage {
+      padding: 4rem 2rem;
+      text-align: center;
+      font-family: 'EB Garamond', serif;
+      font-weight: 400;
+      font-size:2.25rem;
+      margin-bottom: 1rem;
+      color: #ffffff;
+    }
+    .Homepage a {
+      color: var(--accent);
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .Homepage a:hover { text-decoration: underline; }
+    .highlight-box {
+      margin-top: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .highlight { text-align: left; }
+    .highlight h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
+    .highlight p { margin: 0; font-size: 1rem; color: var(--muted); }
+    .highlight a {
+      color: var(--accent);
+      font-weight: 500;
+      text-decoration: none;
+    }
+    .highlight a:hover { text-decoration: underline; }
+    .footer {
+      padding: 2rem;
+      text-align: center;
+      font-size: 0.875rem;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero-banner">
+    <img src="https://cdn.prod.website-files.com/6687b8a6e64bf8a44a0ecf4f/67eabfc5854908d89d5fabe8_Hero-Image.avif" 
+      loading="lazy" width="441.5"
+      alt="A black and white photo of a woman's head." class="img-banner" data-aos="fade-right">
+    <div class="hero-text" data-aos="fade-left">
+      <h1>Ajuni Dang — Securing the future, one word and one line of code at a time.</h1>
+      <p>Student. Speaker. Cybersecurity explorer.<br><br> Building the future, and questioning it too</p>
+      <div class="cta-buttons">
+        <a href="projects.html">Explore My Work</a>
+        <a href="blog.html">Read My Blog</a>
+      </div>
+    </div>
+  </section>
+  <section class="Homepage" data-aos="fade-up">
+    <h2>About Me</h2>
+    <p>I’m a 14-year-old student passionate about cybersecurity, digital forensics, and public speaking. I build, I speak, I reflect — all in pursuit of a smarter and more secure world.</p>
+  </section>
+  <section class="section" data-aos="fade-up">
+    <h2>Highlights</h2>
+    <div class="highlight-box">
+      <div class="highlight">
+        <h3>💻 Latest Project</h3>
+        <p>TryHackMe: Intro to Cyber — “I learned Nmap scanning and port enumeration.” <a href="#">Read more</a></p>
+      </div>
+      <div class="highlight">
+        <h3>🎤 Recent Speech</h3>
+        <p>“Freedom Shouldn't Come with Conditions” – Reflecting on feminism and power. <a href="#">Read more</a></p>
+      </div>
+      <div class="highlight">
+        <h3>🧠 Blog Snippet</h3>
+        <p>“Coming soon...” <a href="#">Read more</a></p>
+      </div>
+    </div>
+  </section>
+  <footer class="footer">
+    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a> | <a href="https://github.com/ajuni-d" target="_blank">GitHub</a><br>© 2025 Ajuni Kaur. Coded by me.</p>
+  </footer>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
+</body>
+</html>
