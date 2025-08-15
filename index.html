@@ -13,21 +13,35 @@
       --accent: #2b6cb0;
       --muted: #bbb;
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       background-color: var(--bg);
       color: var(--text);
       font-family: 'Inter', sans-serif;
       line-height: 1.6;
     }
+
     h1, h2 {
       font-family: 'EB Garamond', serif;
       font-weight: 400;
       margin-bottom: 1rem;
       color: var(--text);
     }
-    h1 { font-size: 3rem; }
-    h2 { font-size: 2.25rem; }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 2.25rem;
+    }
+
     p {
       font-size: 1.1rem;
       max-width: 700px;
@@ -35,10 +49,12 @@
       color: var(--muted);
       text-align: center;
     }
+
     .section {
       padding: 4rem 2rem;
       text-align: center;
     }
+
     .hero-banner {
       display: flex;
       flex-wrap: wrap;
@@ -49,6 +65,7 @@
       background-color: var(--bg);
       text-align: left;
     }
+
     .img-banner {
       flex: 0 0 auto;
       width: 100%;
@@ -57,13 +74,26 @@
       opacity: 1 !important;
       visibility: visible !important;
     }
+
     .hero-text {
       flex: 1 1 300px;
       max-width: 600px;
     }
-    .hero-text h1 { font-size: 2.75rem; margin-bottom: 1rem; }
-    .hero-text p { text-align: left; margin: 0 0 2rem; }
-    .cta-buttons { margin-top: 1rem; }
+
+    .hero-text h1 {
+      font-size: 2.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero-text p {
+      text-align: left;
+      margin: 0 0 2rem;
+    }
+
+    .cta-buttons {
+      margin-top: 1rem;
+    }
+
     .cta-buttons a {
       display: inline-block;
       margin: 0.5rem 1rem 0.5rem 0;
@@ -74,10 +104,13 @@
       border-radius: 4px;
       transition: all 0.3s ease;
     }
+
     .cta-buttons a:hover {
       background-color: var(--accent);
       color: white;
+    
     }
+
     .Homepage {
       padding: 4rem 2rem;
       text-align: center;
@@ -86,13 +119,21 @@
       font-size:2.25rem;
       margin-bottom: 1rem;
       color: #ffffff;
+      
     }
+      
     .Homepage a {
       color: var(--accent);
       font-weight: 500;
       text-decoration: none;
     }
-    .Homepage a:hover { text-decoration: underline; }
+
+    .Homepage a:hover {
+      text-decoration: underline;
+    }
+
+
+
     .highlight-box {
       margin-top: 2rem;
       display: flex;
@@ -102,15 +143,33 @@
       margin-left: auto;
       margin-right: auto;
     }
-    .highlight { text-align: left; }
-    .highlight h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; }
-    .highlight p { margin: 0; font-size: 1rem; color: var(--muted); }
+
+    .highlight {
+      text-align: left;
+    }
+
+    .highlight h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight p {
+      margin: 0;
+      font-size: 1rem;
+      color: var(--muted);
+    }
+
     .highlight a {
       color: var(--accent);
       font-weight: 500;
       text-decoration: none;
     }
-    .highlight a:hover { text-decoration: underline; }
+
+    .highlight a:hover {
+      text-decoration: underline;
+    }
+
     .footer {
       padding: 2rem;
       text-align: center;
@@ -120,23 +179,29 @@
   </style>
 </head>
 <body>
+
   <section class="hero-banner">
     <img src="https://cdn.prod.website-files.com/6687b8a6e64bf8a44a0ecf4f/67eabfc5854908d89d5fabe8_Hero-Image.avif" 
       loading="lazy" width="441.5"
       alt="A black and white photo of a woman's head." class="img-banner" data-aos="fade-right">
     <div class="hero-text" data-aos="fade-left">
       <h1>Ajuni Dang — Securing the future, one word and one line of code at a time.</h1>
-      <p>Student. Speaker. Cybersecurity explorer.<br><br> Building the future, and questioning it too</p>
+      <p>Student. Speaker. Cybersecurity explorer.
+        <br>
+        <br> Building the future, and questioning it too
+      </p>
       <div class="cta-buttons">
         <a href="projects.html">Explore My Work</a>
         <a href="blog.html">Read My Blog</a>
       </div>
     </div>
   </section>
+
   <section class="Homepage" data-aos="fade-up">
     <h2>About Me</h2>
-    <p>I’m a 14-year-old student passionate about cybersecurity, digital forensics, and public speaking. I build, I speak, I reflect — all in pursuit of a smarter and more secure world.</p>
+    <p>I’m a 14-year-old student passionate about cybersecurity, digital forensics, and public speaking. I build, I speak, I reflect — all in pursuit of a smarter and more secure world. <a href='about-me.html'>Read more</a></p>
   </section>
+
   <section class="section" data-aos="fade-up">
     <h2>Highlights</h2>
     <div class="highlight-box">
@@ -154,9 +219,11 @@
       </div>
     </div>
   </section>
+
   <footer class="footer">
-    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a> | <a href="https://github.com/ajuni-d" target="_blank">GitHub</a><br>© 2025 Ajuni Kaur. Coded by me.</p>
+    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a> | <a href="https://github.com/yourgithub" target="_blank">GitHub</a><br>© 2025 Ajuni Kaur. Coded by me.</p>
   </footer>
+
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 1000, once: true });
