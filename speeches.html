@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Ajuni Dang</title>
+  <title>Recent Speeches</title>
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
   <style>
@@ -31,7 +31,11 @@
       text-align:center;
     }
 
-   
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px; 
+   }
    
       h1, h2 {
       font-family: 'EB Garamond', serif;
@@ -46,15 +50,6 @@
     }
    
    
-
-    img {
-       width: 350px;
-      height: 350px;
-      border-radius: 50%;
-      object-fit: cover;
-      border: 3px solid var(--accent);
-      margin:left;
-    }
 
     
 
@@ -75,24 +70,29 @@
 </head>
 <body>
   <section class="section" data-aos="fade-up">
-    <h1 class='title' data-aos='fade-right'>About Me</h1>
-    <img src="PP.jpg" alt="Ajuni Dang" >
-    <p class='tag'>| I’m Ajuni — a curious mind with a keyboard, a mic, and a mission.</p>
+    <h1 class='title' data-aos='fade-right'>Voices & Visions</h1>
+    <p class='tag'>| My voice on issues that matter</p>
   
-    <h2 class='body'>Who I Am</h2>
-    <p class='body'>
-     I'm a 14 year old based in the UK, working to become a world-class businesswoman and changemaker. I am currently 
-      engrossed with exploring how technology, security, and human behavior intersect,
-       whether it’s learning to enumerate ports, writing a speech that challenges norms, 
-      or documenting my journey online — I thrive on building, breaking, and understanding systems.
-    </p>
-    <h2 class='body'>Beyond Tech</h2>
-    <p class='body'> Passionate about combat sports, I practice disciplines that teach me <i>focus, adaptablity, and resilience</i> <br>
-    I believe in carrying that same mindset into my work: <i>protect your guard, anticipate your opponent, and always be three steps ahead.
-    </i></p>
+   <div class="grid">
+      <div class="card">
+        <h3>Freedom Shouldn’t Come With Conditions</h3>
+        <p>A reflection on feminism, empowerment, and the fight for equality.</p>
+        <a href="speeches/feminism.html" class="read-more">Read More →</a>
+      </div>
 
-    <h2>My Mission</h2>
-    <p>-----</p>
+      <div class="card">
+        <h3>Redefining Success in Schools</h3>
+        <p>Challenging the way achievement is measured and exploring student potential.</p>
+        <a href="speeches/education.html" class="read-more">Read More →</a>
+      </div>
+
+      <div class="card">
+        <h3>Coming soon...</h3>
+        <p>Coming soon.</p>
+        <a href="#" class="read-more">Read More →</a>
+      </div>
+    </div>
+    
     <p>
       <a href="index.html">&larr; Back to Homepage</a>
     </p>
