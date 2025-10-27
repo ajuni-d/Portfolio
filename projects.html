@@ -1,55 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Explore My Work</title>
-  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
-  <style>
-    :root {
-      --bg: #111111;
-      --text: #ffffff;
-      --accent: #2b6cb0;
-      --muted: #bbb;
-    }
-    body {
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-    }
-     p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto 2rem;
-      color: var(--muted);
-      
-    }
-     .section {
-      padding: 4rem 2rem;
-      text-align:center;
-    }
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Explore My Work</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+<style>
+:root {
+  --bg: #111111;
+  --text: #ffffff;
+  --accent: #2b6cb0;
+  --muted: #bbb;
+}
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px; 
-    transition: transform 0.4s ease-in-out;
-   }
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
 
-    .card {
+p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  color: var(--muted);
+}
+
+.section {
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+h1, h2 {
+  font-family: 'EB Garamond', serif;
+  font-weight: 400;
+  color: var(--text);
+}
+
+.title {
+  font-size: 60px;
+  text-align: center;
+  padding: 4rem 2rem;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.card {
   background-color: #2e2e2e;
   border-radius: 12px;
   padding: 25px 20px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  flex: 0 0 calc(33.333% - 20px);
   text-align: left;
-  
 }
 
-    .slider-container {
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.12);
+}
+
+.card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #dbd5d5;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #edebeb;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+.read-more {
+  text-decoration: none;
+  color: #1e90ff;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.read-more:hover {
+  color: #3742fa;
+}
+
+/* SLIDER STYLING */
+.slider-container {
   position: relative;
   overflow: hidden;
   width: 100%;
@@ -63,58 +107,10 @@
 }
 
 .work-card {
-  flex: 0 0 calc(33.333% - 20px);
+  flex: 0 0 calc(25% - 15px); /* 4 cards visible */
 }
 
-@media (max-width: 768px) {
-  .work-card {
-    flex: 0 0 80%;
-  }
-}
-
-
- .card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 20px rgba(0,0,0,0.12);
-}
-
- .card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-  color: #dbd5d5;
-}
-
- .card p {
-  font-size: 1rem;
-  color: #edebeb;
-  margin-bottom: 15px;
-  line-height: 1.5;
-}
-
- .read-more {
-  text-decoration: none;
-  color: #1e90ff; /* accent color */
-  font-weight: 600;
-  transition: color 0.2s ease;
-  display: inline-block;
-}
-
-.read-more:hover {
-  color: #3742fa;
-}
-   
-      h1, h2 {
-      font-family: 'EB Garamond', serif;
-      font-weight: 400;
-      color: var(--text);
-    }
-
-    .title {
-      font-size: 60px;
-      text-align: centre;
-      padding: 4rem 2rem;
-    }
-   .slide-btn {
+.slide-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -125,179 +121,181 @@
   cursor: pointer;
   font-size: 20px;
   border-radius: 6px;
+  z-index: 2;
 }
 
 .prev-btn {
-  left: -10px;
+  left: 5px;
 }
+
 .next-btn {
-  right: -10px;
+  right: 5px;
 }
 
-/* Mobile responsive */
+/* Responsive */
+@media (max-width: 1024px) {
+  .work-card { flex: 0 0 calc(50% - 15px); } /* 2 cards */
+}
+
 @media (max-width: 768px) {
-  .work-card {
-    flex: 0 0 calc(80% - 20px); /* Show 1 card */
-  }
+  .work-card { flex: 0 0 80%; } /* 1 card */
 }
-   
 
-    
-
-    .footer {
-      padding: 2rem;
-      text-align: center;
-      font-size: 0.875rem;
-      color: #888;
-    }
-    a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+.footer {
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #888;
+}
+</style>
 </head>
- 
 <body>
-  <section class="section" data-aos="fade-up">
-    <h1 class='title' data-aos='fade-right'>Explore My Work</h1>
-    <p class='tag'>|Projects, challenges, and breakthroughs in my cybersecurity journey.</p> <br>
+<section class="section" data-aos="fade-up">
+<h1 class="title" data-aos="fade-right">Explore My Work</h1>
+<p class="tag">| Projects, challenges, and breakthroughs in my cybersecurity journey.</p>
 
-    <p>Projects</p>
-
-<div class="slider-container">
+<!-- PROJECTS SLIDER -->
+<p>Projects</p>
+<div class="slider-container" id="projects-slider">
   <button class="slide-btn prev-btn">❮</button>
-
   <div class="slider-track">
     <div class="card work-card">
-      <h3>Project #1</h3>
-      <p>#</p>
+      <h3>TryHackMe: Intro to Cyber</h3>
+      <p>Nmap scanning and port enumeration.</p>
       <a href="#" class="read-more">Read More →</a>
     </div>
-
     <div class="card work-card">
-      <h3>Project #2</h3>
-      <p>#</p>
+      <h3>Linux Fundamentals</h3>
+      <p>Permissions, terminal navigation, and sudo.</p>
       <a href="#" class="read-more">Read More →</a>
     </div>
-
     <div class="card work-card">
-      <h3>Project #3</h3>
-      <p>Coming soon...</p>
+      <h3>My First CTF</h3>
+      <p>Finding hidden flags & basic recon.</p>
       <a href="#" class="read-more">Read More →</a>
     </div>
-
     <div class="card work-card">
-      <h3>Project #4</h3>
-      <p>Coming soon...</p>
+      <h3>Networking Basics</h3>
+      <p>OSI Model & packet flow.</p>
       <a href="#" class="read-more">Read More →</a>
     </div>
   </div>
-
   <button class="slide-btn next-btn">❯</button>
 </div>
-  </section>
-  <section>
-    <p>Certifications/Badges</p>
-       <div class="grid">
-      <div class="card">
-        <h3>#</h3>
-        <p>#</p>
-        <a href= class="read-more">Read More →</a>
-      </div>
 
-      <div class="card">
-        <h3#</h3>
-        <p>#</p>
-        <a href=" class="read-more">Read More →</a>
-      </div>
+<!-- CERTIFICATIONS SLIDER -->
+<p>Certifications / Badges</p>
+<div class="slider-container" id="certifications-slider">
+  <button class="slide-btn prev-btn">❮</button>
+  <div class="slider-track">
+    <div class="card work-card">
+      <h3>TryHackMe Badge</h3>
+      <p>Intro to Linux</p>
+      <a href="#" class="read-more">Read More →</a>
+    </div>
+    <div class="card work-card">
+      <h3>TryHackMe Badge</h3>
+      <p>Network Fundamentals</p>
+      <a href="#" class="read-more">Read More →</a>
+    </div>
+    <div class="card work-card">
+      <h3>Coming Soon</h3>
+      <p>More certifications</p>
+      <a href="#" class="read-more">Read More →</a>
+    </div>
+    <div class="card work-card">
+      <h3>Coming Soon</h3>
+      <p>More certifications</p>
+      <a href="#" class="read-more">Read More →</a>
+    </div>
+  </div>
+  <button class="slide-btn next-btn">❯</button>
+</div>
 
-      <div class="card">
-        <h3>#</h3>
-        <p>Coming soon...</p>
-        <a href="#" class="read-more">Read More →</a>
-      </div>
+<!-- FUTURE WORK SLIDER -->
+<p>Future Work</p>
+<div class="slider-container" id="future-slider">
+  <button class="slide-btn prev-btn">❮</button>
+  <div class="slider-track">
+    <div class="card work-card">
+      <h3>Advanced Cybersecurity Project</h3>
+      <p>Coming soon…</p>
+      <a href="#" class="read-more">Read More →</a>
+    </div>
+    <div class="card work-card">
+      <h3>AI Security Research</h3>
+      <p>Coming soon…</p>
+      <a href="#" class="read-more">Read More →</a>
+    </div>
+    <div class="card work-card">
+      <h3>Penetration Testing Lab</h3>
+      <p>Coming soon…</p>
+      <a href="#" class="read-more">Read More →</a>
+    </div>
+    <div class="card work-card">
+      <h3>Digital Forensics Challenge</h3>
+      <p>Coming soon…</p>
+      <a href="#" class="read-more">Read More →</a>
+    </div>
+  </div>
+  <button class="slide-btn next-btn">❯</button>
+</div>
 
-      <div class="card">
-        <h3>#</h3>
-        <p>Coming soon...</p>
-        <a href="#" class="read-more">Read More →</a>
-      </div>
-       </div> </section>
+<section>
+<p><a href="index.html">&larr; Back to Homepage</a></p>
+</section>
 
-  <section> 
+<footer class="footer">
+<p>Email: <a href="mailto:ajunik.62@gmail.com">ajunik.62@gmail.com</a><br>© 2025 Ajuni Dang.</p>
+</footer>
 
-      <p>Future Work</p>
-       <div class="grid">
-      <div class="card">
-        <h3>#</h3>
-        <p>#</p>
-        <a href= class="read-more">Read More →</a>
-      </div>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({ duration: 1000, once: true });
+</script>
 
-      <div class="card">
-        <h3#</h3>
-        <p>#</p>
-        <a href=" class="read-more">Read More →</a>
-      </div>
-
-      <div class="card">
-        <h3>#</h3>
-        <p>Coming soon...</p>
-        <a href="#" class="read-more">Read More →</a>
-      </div>
-
-      <div class="card">
-        <h3>#</h3>
-        <p>Coming soon...</p>
-        <a href="#" class="read-more">Read More →</a>
-      </div>
-       </div> </section>
-  <section>
-    <p>
-      <a href="index.html">&larr; Back to Homepage</a>
-    </p>
-  </section>
-  <footer class="footer">
-    <p>Email: <a href="mailto:ajunik.62@gmail.com">ajunik.62@gmail.com</a><br>© 2025 Ajuni Dang.</p>
-  </footer>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src='slider.js'></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
-  </script>
-  <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const track = document.querySelector(".slider-track");
-  const prevBtn = document.querySelector(".prev-btn");
-  const nextBtn = document.querySelector(".next-btn");
-  const cards = document.querySelectorAll(".work-card");
-
+<!-- SLIDER JS -->
+<script>
+function initSlider(sliderId) {
+  const container = document.getElementById(sliderId);
+  const track = container.querySelector(".slider-track");
+  const prevBtn = container.querySelector(".prev-btn");
+  const nextBtn = container.querySelector(".next-btn");
+  const cards = container.querySelectorAll(".work-card");
   let index = 0;
-  const cardsToShow = 3;
-  const cardWidth = cards[0].offsetWidth + 20;
+
+  function getCardsToShow() {
+    const width = window.innerWidth;
+    if(width <= 768) return 1;
+    if(width <= 1024) return 2;
+    return 4;
+  }
 
   function updateSlider() {
+    const cardsToShow = getCardsToShow();
+    const cardWidth = cards[0].offsetWidth + 20; // include gap
     track.style.transform = `translateX(${-index * cardWidth}px)`;
   }
 
   nextBtn.addEventListener("click", () => {
-    if (index < cards.length - cardsToShow) {
+    const cardsToShow = getCardsToShow();
+    if(index < cards.length - cardsToShow) {
       index++;
       updateSlider();
     }
   });
 
   prevBtn.addEventListener("click", () => {
-    if (index > 0) {
+    if(index > 0) {
       index--;
       updateSlider();
     }
   });
-});
-</script>
 
+  window.addEventListener("resize", updateSlider);
+}
+
+["projects-slider", "certifications-slider", "future-slider"].forEach(initSlider);
+</script>
 </body>
 </html>
