@@ -135,6 +135,34 @@
     }
   </style>
 </head>
+  <script>
+const track = document.querySelector(".slider-track");
+const prevBtn = document.querySelector(".prev-btn");
+const nextBtn = document.querySelector(".next-btn");
+const cards = document.querySelectorAll(".work-card");
+
+let index = 0;
+const cardsToShow = 3; // Adjust if you change CSS
+const cardWidth = cards[0].offsetWidth + 20; // Add gap size
+
+function updateSlider() {
+  track.style.transform = `translateX(${-index * cardWidth}px)`;
+}
+
+nextBtn.addEventListener("click", () => {
+  if (index < cards.length - cardsToShow) {
+    index++;
+    updateSlider();
+  }
+});
+
+prevBtn.addEventListener("click", () => {
+  if (index > 0) {
+    index--;
+    updateSlider();
+  }
+});
+</script>
 <body>
   <section class="section" data-aos="fade-up">
     <h1 class='title' data-aos='fade-right'>Explore My Work</h1>
