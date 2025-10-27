@@ -49,6 +49,30 @@
   
 }
 
+    .slider-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  margin: 2rem auto;
+}
+
+.slider-track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.work-card {
+  flex: 0 0 calc(33.333% - 20px);
+}
+
+@media (max-width: 768px) {
+  .work-card {
+    flex: 0 0 80%;
+  }
+}
+
+
  .card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 20px rgba(0,0,0,0.12);
@@ -135,69 +159,45 @@
     }
   </style>
 </head>
-  <script>
-const track = document.querySelector(".slider-track");
-const prevBtn = document.querySelector(".prev-btn");
-const nextBtn = document.querySelector(".next-btn");
-const cards = document.querySelectorAll(".work-card");
-
-let index = 0;
-const cardsToShow = 3; // Adjust if you change CSS
-const cardWidth = cards[0].offsetWidth + 20; // Add gap size
-
-function updateSlider() {
-  track.style.transform = `translateX(${-index * cardWidth}px)`;
-}
-
-nextBtn.addEventListener("click", () => {
-  if (index < cards.length - cardsToShow) {
-    index++;
-    updateSlider();
-  }
-});
-
-prevBtn.addEventListener("click", () => {
-  if (index > 0) {
-    index--;
-    updateSlider();
-  }
-});
-</script>
+ 
 <body>
   <section class="section" data-aos="fade-up">
     <h1 class='title' data-aos='fade-right'>Explore My Work</h1>
     <p class='tag'>|Projects, challenges, and breakthroughs in my cybersecurity journey.</p> <br>
 
     <p>Projects</p>
-    <button class="slide-btn prev-btn">❮</button>
-   <div class="grid">
-      <div class="card">
-        <h3>#</h3>
-        <p>#</p>
-        <a href= class="read-more">Read More →</a>
-      </div>
 
-      <div class="card">
-        <h3#</h3>
-        <p>#</p>
-        <a href=" class="read-more">Read More →</a>
-      </div>
+<div class="slider-container">
+  <button class="slide-btn prev-btn">❮</button>
 
-      <div class="card">
-        <h3>#</h3>
-        <p>Coming soon...</p>
-        <a href="#" class="read-more">Read More →</a>
-      </div>
-
-      <div class="card">
-        <h3>#</h3>
-        <p>Coming soon...</p>
-        <a href="#" class="read-more">Read More →</a>
-      </div>
-     
-    <button class="slide-btn next-btn">❯</button>
+  <div class="slider-track">
+    <div class="card work-card">
+      <h3>Project #1</h3>
+      <p>#</p>
+      <a href="#" class="read-more">Read More →</a>
     </div>
 
+    <div class="card work-card">
+      <h3>Project #2</h3>
+      <p>#</p>
+      <a href="#" class="read-more">Read More →</a>
+    </div>
+
+    <div class="card work-card">
+      <h3>Project #3</h3>
+      <p>Coming soon...</p>
+      <a href="#" class="read-more">Read More →</a>
+    </div>
+
+    <div class="card work-card">
+      <h3>Project #4</h3>
+      <p>Coming soon...</p>
+      <a href="#" class="read-more">Read More →</a>
+    </div>
+  </div>
+
+  <button class="slide-btn next-btn">❯</button>
+</div>
   </section>
   <section>
     <p>Certifications/Badges</p>
@@ -268,5 +268,36 @@ prevBtn.addEventListener("click", () => {
   <script>
     AOS.init({ duration: 1000, once: true });
   </script>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".slider-track");
+  const prevBtn = document.querySelector(".prev-btn");
+  const nextBtn = document.querySelector(".next-btn");
+  const cards = document.querySelectorAll(".work-card");
+
+  let index = 0;
+  const cardsToShow = 3;
+  const cardWidth = cards[0].offsetWidth + 20;
+
+  function updateSlider() {
+    track.style.transform = `translateX(${-index * cardWidth}px)`;
+  }
+
+  nextBtn.addEventListener("click", () => {
+    if (index < cards.length - cardsToShow) {
+      index++;
+      updateSlider();
+    }
+  });
+
+  prevBtn.addEventListener("click", () => {
+    if (index > 0) {
+      index--;
+      updateSlider();
+    }
+  });
+});
+</script>
+
 </body>
 </html>
