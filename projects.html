@@ -35,6 +35,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px; 
+    transition: transform 0.4s ease-in-out;
    }
 
     .card {
@@ -43,6 +44,9 @@
   padding: 25px 20px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  flex: 0 0 calc(33.333% - 20px);
+  text-align: left;
+  
 }
 
  .card:hover {
@@ -68,6 +72,7 @@
   color: #1e90ff; /* accent color */
   font-weight: 600;
   transition: color 0.2s ease;
+  display: inline-block;
 }
 
 .read-more:hover {
@@ -85,7 +90,32 @@
       text-align: centre;
       padding: 4rem 2rem;
     }
-   
+   .slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: black;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  cursor: pointer;
+  font-size: 20px;
+  border-radius: 6px;
+}
+
+.prev-btn {
+  left: -10px;
+}
+.next-btn {
+  right: -10px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .work-card {
+    flex: 0 0 calc(80% - 20px); /* Show 1 card */
+  }
+}
    
 
     
@@ -111,7 +141,7 @@
     <p class='tag'>|Projects, challenges, and breakthroughs in my cybersecurity journey.</p> <br>
 
     <p>Projects</p>
-  
+    <button class="slide-btn prev-btn">❮</button>
    <div class="grid">
       <div class="card">
         <h3>#</h3>
@@ -136,6 +166,8 @@
         <p>Coming soon...</p>
         <a href="#" class="read-more">Read More →</a>
       </div>
+     
+    <button class="slide-btn next-btn">❯</button>
     </div>
 
   </section>
