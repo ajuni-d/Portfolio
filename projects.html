@@ -154,31 +154,69 @@ a:hover {
   font-size: 0.875rem;
   color: #888;
 }
+
+  .toggle-container {
+display:flex;
+justify-content:center;
+gap:15px;
+margin:2rem;
+}
+
+.toggle-btn {
+background:#2e2e2e;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:20px;
+cursor:pointer;
+font-family:'Inter';
+transition:0.3s;
+}
+
+
+.toggle-btn:hover,
+.toggle-btn.active {
+background:#2b6cb0;
+}
+
+
+.toggle-content {
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:20px;
+max-width:1000px;
+margin:auto;
+}
+
+
+.hidden {
+display:none;
+}
 </style>
 </head>
 <body>
 <section class="section" data-aos="fade-up">
 <h1 class="title" data-aos="fade-right">Explore My Work</h1>
-<p class="tag">| Projects, challenges, and breakthroughs in my cybersecurity journey.</p>
+<p class="tag">| Projects, challenges, and breakthroughs</p>
 
 <!-- PROJECTS SLIDER -->
-<p class='head'>Projects</p>
+<p class='head'>Learning Journey</p>
 <div class="slider-container" id="projects-slider">
   <button class="slide-btn prev-btn">❮</button>
   <div class="slider-track">
     <div class="card work-card">
-      <h3>TryHackMe: Intro to Cyber</h3>
-      <p>Nmap scanning and port enumeration.</p>
+      <h3>Quantitative Trading Simulator</h3>
+      <p>A Python-based trading simulator exploring market data, portfolio strategies, and risk management.</p>
       <a href="#" class="read-more">Read More →</a>
     </div>
     <div class="card work-card">
-      <h3>Linux Fundamentals</h3>
-      <p>Permissions, terminal navigation, and sudo.</p>
+      <h3>Personal Finance Dashboard</h3>
+      <p>An interactive dashboard for analysing spending, saving patterns, and financial goals.</p>
       <a href="#" class="read-more">Read More →</a>
     </div>
     <div class="card work-card">
-      <h3>My First CTF</h3>
-      <p>Finding hidden flags & basic recon.</p>
+      <h3>Cybersecurity Toolkit</h3>
+      <p>A collection of Python tools exploring cybersecurity concepts and automation.</p>
       <a href="#" class="read-more">Read More →</a>
     </div>
     <div class="card work-card">
@@ -190,64 +228,70 @@ a:hover {
   <button class="slide-btn next-btn">❯</button>
 </div>
 
-<!-- CERTIFICATIONS SLIDER -->
-<p class='head'>Certifications / Badges</p>
-<div class="slider-container" id="certifications-slider">
-  <button class="slide-btn prev-btn">❮</button>
-  <div class="slider-track">
-    <div class="card work-card">
-      <h3>TryHackMe Badge</h3>
-      <p>Intro to Linux</p>
-      <a href="introlinux.html" class="read-more">Read More →</a>
-    </div>
-    <div class="card work-card">
-      <h3>TryHackMe Badge</h3>
-      <p>Network Fundamentals</p>
-      <a href="#" class="read-more">Read More →</a>
-    </div>
-    <div class="card work-card">
-      <h3>Coming Soon</h3>
-      <p>More certifications</p>
-      <a href="#" class="read-more">Read More →</a>
-    </div>
-    <div class="card work-card">
-      <h3>Coming Soon</h3>
-      <p>More certifications</p>
-      <a href="#" class="read-more">Read More →</a>
-    </div>
-  </div>
-  <button class="slide-btn next-btn">❯</button>
+<p class="head">My Journey</p>
+
+<div class="toggle-container">
+<button class="toggle-btn active" onclick="showSection('competitions')">
+Competitions
+</button>
+
+<button class="toggle-btn" onclick="showSection('experience')">
+Experience
+</button>
+
+<button class="toggle-btn" onclick="showSection('learning')">
+Learning
+</button>
 </div>
 
-<!-- FUTURE WORK SLIDER -->
-<p class='head'>Future Work</p>
-<div class="slider-container" id="future-slider">
-  <button class="slide-btn prev-btn">❮</button>
-  <div class="slider-track">
-    <div class="card work-card">
-      <h3>Advanced Cybersecurity Project</h3>
-      <p>Coming soon…</p>
-      <a href="#" class="read-more">Read More →</a>
-    </div>
-    <div class="card work-card">
-      <h3>AI Security Research</h3>
-      <p>Coming soon…</p>
-      <a href="#" class="read-more">Read More →</a>
-    </div>
-    <div class="card work-card">
-      <h3>Penetration Testing Lab</h3>
-      <p>Coming soon…</p>
-      <a href="#" class="read-more">Read More →</a>
-    </div>
-    <div class="card work-card">
-      <h3>Digital Forensics Challenge</h3>
-      <p>Coming soon…</p>
-      <a href="#" class="read-more">Read More →</a>
-    </div>
-  </div>
-  <button class="slide-btn next-btn">❯</button>
+
+<div id="competitions" class="toggle-content">
+
+<div class="card">
+<h3>Cyber Explorers Cup</h3>
+<p>
+Team competition exploring cybersecurity challenges,
+problem solving, and technical collaboration.
+</p>
+<a href="#" class="read-more">Read More →</a>
 </div>
 
+<div class="card">
+<h3>CyberFirst Girls</h3>
+<p>
+Developing cybersecurity knowledge through practical challenges.
+</p>
+<a href="#" class="read-more">Read More →</a>
+</div>
+
+<div class="card">
+<h3>UKMT Junior & Intermediate</h3>
+<p>
+Developing skills in logical reasoning, problem-solving, and mathematical creativity (Silver Awards)
+</p>
+<a href="#" class="read-more">Read More →</a>
+</div>
+
+</div>
+
+
+
+<div id="experience" class="toggle-content hidden">
+
+<div class="card">
+<h3>Cytiva Work Experience</h3>
+<p>
+Explored biotechnology, finance, legal, IT and operations
+within a global company environment.
+</p>
+<a href="#" class="read-more">Read More →</a>
+</div>
+
+</div>
+
+</div>
+
+</div>
 <section>
 <p><a href="index.html">&larr; Back to Homepage</a></p>
 </section>
@@ -301,7 +345,27 @@ function initSlider(sliderId) {
 
   window.addEventListener("resize", updateSlider);
 }
+function showSection(section){
 
+document.querySelectorAll(".toggle-content")
+.forEach(item=>{
+item.classList.add("hidden");
+});
+
+
+document.querySelectorAll(".toggle-btn")
+.forEach(btn=>{
+btn.classList.remove("active");
+});
+
+
+document.getElementById(section)
+.classList.remove("hidden");
+
+
+event.target.classList.add("active");
+
+}
 ["projects-slider", "certifications-slider", "future-slider"].forEach(initSlider);
 </script>
 </body>
