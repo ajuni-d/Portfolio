@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Insights — Ajuni Dang</title>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+<style>
+:root {
+  --bg: #111111;
+  --text: #ffffff;
+  --accent: #2b6cb0;
+  --muted: #bbb;
+  --card: #2e2e2e;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'EB Garamond', serif;
+  font-weight: 400;
+  color: var(--text);
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* NAV */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  padding: 1.25rem 2rem;
+  background-color: rgba(17,17,17,0.92);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid #2a2a2a;
+}
+
+.navbar a {
+  color: var(--muted);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  color: var(--text);
+  border-bottom: 2px solid var(--accent);
+}
+
+/* HERO */
+.hero {
+  padding: 5rem 2rem 3rem;
+  text-align: center;
+}
+
+.hero .eyebrow {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: var(--muted);
+  max-width: 640px;
+  margin: 0 auto 2.5rem;
+}
+
+/* SEARCH */
+.search-wrap {
+  max-width: 500px;
+  margin: 0 auto 2rem;
+}
+
+.search-wrap input {
+  width: 100%;
+  padding: 0.85rem 1.25rem;
+  border-radius: 999px;
+  border: 1px solid #333;
+  background-color: #1b1b1b;
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-wrap input::placeholder { color: #777; }
+.search-wrap input:focus { border-color: var(--accent); }
+
+/* CATEGORY FILTERS */
+.filter-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 1rem;
+}
+
+.filter-btn {
+  background: #2e2e2e;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  transition: 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+  background: var(--accent);
+}
+
+/* FEATURED ARTICLE */
+.featured {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2.5rem;
+  background: linear-gradient(145deg, #1c1c1c, #232323);
+  border: 1px solid #2c2c2c;
+  border-radius: 16px;
+}
+
+.featured .tag {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  font-size: 0.75rem;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.featured h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.featured .meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.featured .read-more {
+  font-weight: 600;
+}
+
+/* LATEST ARTICLES */
+.latest {
+  max-width: 1100px;
+  margin: 4rem auto 5rem;
+  padding: 0 2rem;
+}
+
+.latest h2 {
+  font-size: 1.75rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--card);
+  border-radius: 12px;
+  padding: 25px 22px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.12);
+}
+
+.card .category {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+  color: #dbd5d5;
+}
+
+.card p {
+  font-size: 0.95rem;
+  color: var(--muted);
+  margin-bottom: 15px;
+}
+
+.card .status {
+  font-size: 0.8rem;
+  font-style: italic;
+  color: #777;
+}
+
+.no-results {
+  text-align: center;
+  color: var(--muted);
+  padding: 2rem;
+  display: none;
+}
+
+.footer {
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.875rem;
+  color: #888;
+}
+</style>
+</head>
+<body>
+
+<nav class="navbar">
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="projects.html#experience">Experience</a>
+  <a href="blog.html" class="active">Blog</a>
+</nav>
+
+<section class="hero" data-aos="fade-up">
+  <div class="eyebrow">INSIGHTS</div>
+  <p>Thoughts on technology, finance, programming, leadership and continuous learning.</p>
+
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search articles...">
+  </div>
+
+  <div class="filter-container" id="filterContainer">
+    <button class="filter-btn active" data-filter="all">All</button>
+    <button class="filter-btn" data-filter="technology">Technology</button>
+    <button class="filter-btn" data-filter="finance">Finance</button>
+    <button class="filter-btn" data-filter="programming">Programming</button>
+    <button class="filter-btn" data-filter="career">Career</button>
+  </div>
+</section>
+
+<section class="featured" data-aos="fade-up">
+  <span class="tag">FEATURED ARTICLE</span>
+  <h2>Beyond the Science: Discovering the People Behind Cytiva</h2>
+  <p class="meta">6 min read • July 2026</p>
+  <a href="#" class="read-more">Read Article →</a>
+</section>
+
+<section class="latest" data-aos="fade-up">
+  <h2>Latest Articles</h2>
+  <div class="article-grid" id="articleGrid">
+
+    <div class="card" data-category="technology">
+      <span class="category">Cybersecurity</span>
+      <h3>Intro to TryHackMe</h3>
+      <p class="status">Coming Soon</p>
+    </div>
+
+    <div class="card" data-category="finance">
+      <span class="category">Finance</span>
+      <h3>Why Quant Interests Me</h3>
+      <p class="status">Coming Soon</p>
+    </div>
+
+    <div class="card" data-category="programming">
+      <span class="category">Programming</span>
+      <h3>Building My Portfolio</h3>
+      <p class="status">Coming Soon</p>
+    </div>
+
+    <div class="card" data-category="career">
+      <span class="category">Career</span>
+      <h3>Lessons from Public Speaking</h3>
+      <p class="status">Coming Soon</p>
+    </div>
+
+  </div>
+  <p class="no-results" id="noResults">No articles match your search.</p>
+</section>
+
+<footer class="footer">
+  <p>Email: <a href="mailto:ajunik.62@gmail.com">ajunik.62@gmail.com</a> | <a href="https://github.com/yourgithub" target="_blank">GitHub</a><br>© 2025 Ajuni Dang. Coded by me.</p>
+</footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({ duration: 1000, once: true });
+
+const filterButtons = document.querySelectorAll('.filter-btn');
+const searchInput = document.getElementById('searchInput');
+const cards = document.querySelectorAll('.article-grid .card');
+const noResults = document.getElementById('noResults');
+let activeFilter = 'all';
+
+function applyFilters() {
+  const query = searchInput.value.trim().toLowerCase();
+  let visibleCount = 0;
+
+  cards.forEach(card => {
+    const category = card.dataset.category;
+    const title = card.querySelector('h3').textContent.toLowerCase();
+    const matchesFilter = activeFilter === 'all' || category === activeFilter;
+    const matchesSearch = title.includes(query) || category.includes(query);
+
+    if (matchesFilter && matchesSearch) {
+      card.style.display = '';
+      visibleCount++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+}
+
+filterButtons.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterButtons.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.filter;
+    applyFilters();
+  });
+});
+
+searchInput.addEventListener('input', applyFilters);
+</script>
+</body>
+</html>
